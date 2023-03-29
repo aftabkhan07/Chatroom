@@ -9,20 +9,24 @@
     }
 
 </style>
-
-<h1>Home Template</h1>
-
+ 
 <div class="home-container">
     <div>
         <h3>Browse content</h3>
-        {% for topic in topics %}
-            <h5>{{topic}}</h5>
-        {% endfor %}
         <hr>
+        <div>
+            <a href="{% url 'home' %}">All</a>
+        </div>
+        {% for topic in topics %}
+            <div>
+                <a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}</a>
+            </div>
+        {% endfor %}
     </div>
 
     <div>
         <div>
+            <h5>{{ room_count }} room available</h5>
             <a href='{% url "create-room" %}'>Create room</a>
             <hr>
             {% for room in rooms %}
