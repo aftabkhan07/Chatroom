@@ -1,7 +1,7 @@
 {
     "version":2,
     "builds": [{
-        "src":"poll/wsgi.py",
+        "src":"chatroom/wsgi.py",
         "use":"@vercel/python",
         "config":{"maxLambdaSize":"15mb", "runtime":"python3.9"}
     },
@@ -18,7 +18,24 @@
     },
         {
             "src": "/(.*)",
-            "dest": "poll/wsgi.py"
+            "dest": "chatroom/wsgi.py"
         }
     ]
 }
+
+
+// {
+//     "builds": [{
+//         "src": "djangoprojectname/wsgi.py",
+//         "use": "@vercel/python",
+//         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+//     }],
+//     "routes": [
+//         {
+//             "src": "/(.*)",
+//             "dest": "djangoprojectname/wsgi.py"
+//         }
+//     ]
+// }
+
+
