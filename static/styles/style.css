@@ -182,6 +182,7 @@ a {
   height: 0.7rem;
   bottom: 0px;
   right: -6px;
+  z-index: 0;
 }
 
 .avatar.avatar--large img {

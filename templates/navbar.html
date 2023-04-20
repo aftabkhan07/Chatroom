@@ -6,6 +6,7 @@
         <img src="{% static 'images/logo.svg' %}" />
         <h1>Chatroom</h1>
       </a>
+      {% if request.user.is_authenticated %}
       <form class="header__search" method="GET" action = "{% url 'home' %}">
         <label>
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
@@ -17,14 +18,15 @@
           <input name="q" placeholder="Search for rooms..." />
         </label>
       </form>
+      {% endif %}
       <nav class="header__menu">
 
         <!-- Logged In -->
         {% if request.user.is_authenticated %}
         <div class="header__user">
-          <a href="profile.html">
+          <a href="{% url 'update-user' %}">
             <div class="avatar avatar--medium active">
-              <img src="{% static 'images\avatar.svg'%}" />
+              <img src="{{request.user.avatar.url}}" />
             </div>
             <p>{{request.user.username}} <span>@{{request.user.username}}</span></p>
           </a>
