@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-c4j!#8cmr-r1u8y)%7b#h1p#*5ubrhg5-2)j!)-2s(%5^o20e6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -144,3 +144,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
+DATABASES = {
+    'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'URL': 'postgresql://postgres:Yd1RIcSu1QYU8JrxpHw5@containers-us-west-116.railway.app:7191/railway',
+    'NAME': 'railway',
+    'USER': 'postgres',
+    'PASSWORD': 'Yd1RIcSu1QYU8JrxpHw5',
+    'HOST': 'containers-us-west-116.railway.app',
+    'PORT': 7191,
+    }
+}
